@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio | Gabriel Vicente</title>
+
+    <!--
+    =========================================
+    BOOTSTRAP VIA CDN (LINK EXTERNO)
+    =========================================
+    Estamos usando apenas a parte de "grid" e classes utilitárias
+    do Bootstrap (ex: container, row, col) para nos ajudar a
+    organizar o layout em colunas de forma responsiva.
+
+    Não estamos usando JavaScript do Bootstrap, apenas o CSS.
+
+    Se quiser remover o Bootstrap, basta apagar a linha abaixo.
+    O site continuará funcionando, pois o nosso style.css
+    já contém toda a estilização principal.
+    -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!--
+    Aqui ligamos o nosso arquivo de estilos próprio.
+    Ele vem DEPOIS do Bootstrap de propósito:
+    assim, se houver conflito de estilos, o NOSSO CSS
+    tem prioridade sobre o do Bootstrap.
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--
+    =========================================================
+    0. BARRA DE NAVEGAÇÃO (MENU SUPERIOR)
+    =========================================================
+
+    Para que serve esta seção?
+    É uma barra fixa no topo da página, com uma borda inferior
+    separando-a do restante do conteúdo. Ela funciona como um
+    "menu de opções do perfil": links rápidos que levam o
+    visitante direto para cada seção do currículo, sem precisar
+    rolar a página manualmente.
+
+    Por que isso deixa o site mais profissional?
+    Sites de portfólio e currículos online costumam ter um menu
+    fixo no topo. Isso facilita a navegação do recrutador e
+    mostra organização por parte de quem criou o site.
+
+    Como funciona o link (href="#id")?
+    Cada link abaixo aponta para o "id" de uma seção já existente
+    no HTML (ex: id="sobre", id="tecnologias"). Ao clicar, o
+    navegador rola automaticamente até aquele trecho da página.
+    Não é necessário JavaScript para isso, é um recurso nativo do HTML.
+
+    O QUE ALTERAR AQUI:
+        - "Seu Nome" (logo em texto) -> pode trocar pelo seu nome
+          ou apenas suas iniciais (ex: "S.N.");
+        - Os textos dos links (Sobre, Tecnologias, etc.) -> mantenha
+          os mesmos "href", apenas troque o texto se quiser;
+        - Para ADICIONAR um novo botão, copie uma tag <a> completa
+          e cole antes do fechamento de </nav>.
+        - Para REMOVER um botão, apague a tag <a> correspondente.
+    -->
+    <nav class="navbar-superior">
+        <div class="container navbar-conteudo">
+
+            <!-- Logo / nome em texto, do lado esquerdo da barra -->
+            <a href="#" class="navbar-logo">Gabriel Vicente Fernandes</a>
+
+            <!-- Links de navegação, do lado direito da barra -->
+            <div class="navbar-links">
+                <a href="#sobre" class="navbar-botao">Sobre</a>
+                <a href="#tecnologias" class="navbar-botao">Tecnologias</a>
+                <a href="#projetos" class="navbar-botao">Projetos</a>
+                <a href="#formacao" class="navbar-botao">Formação</a>
+                <a href="#contato" class="navbar-botao navbar-botao-destaque">Contato</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!--
+    =========================================================
+    1. HERO SECTION (CABEÇALHO DE APRESENTAÇÃO)
+    =========================================================
+
+    O que é uma "Hero Section"?
+    É a primeira coisa que o visitante vê ao abrir a página.
+    Em um currículo online, ela funciona como um "cartão de
+    visitas digital": nome, cargo desejado e uma frase de
+    impacto sobre você.
+
+    Por que ela é importante para recrutadores?
+    Recrutadores recebem MUITOS currículos e portfólios.
+    Eles passam poucos segundos analisando cada um.
+    Por isso, a Hero Section precisa responder rapidamente:
+        - Quem é essa pessoa?
+        - O que ela faz / busca?
+        - Como posso entrar em contato?
+
+    O QUE ALTERAR AQUI:
+        - src="assets/sua-foto.jpg"  -> coloque o caminho da sua foto
+        - "Seu Nome Completo"        -> seu nome
+        - "Cargo Desejado"           -> ex: Desenvolvedor Front-End Jr.
+        - O texto dentro do <p>      -> sua frase de apresentação
+        - Os links do LinkedIn/GitHub -> seus perfis reais
+    -->
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Coluna da foto de perfil -->
+                <div class="col-12 col-md-4 text-center">
+                    <!--
+                        Dica: use uma foto profissional, com boa
+                        iluminação e fundo neutro. Evite fotos de
+                        festas, selfies de baixa qualidade ou com
+                        outras pessoas na imagem.
+                    -->
+                    <img
+                        src="FotoProfissional.png"
+                        alt="Foto de perfil de Seu Nome Completo"
+                        class="hero-foto">
+                </div>
+
+                <!-- Coluna com as informações principais -->
+                <div class="col-12 col-md-8 text-center text-md-start">
+
+                    <h1 class="hero-nome">Gabriel Vicente Fernandes</h1>
+
+                    <h2 class="hero-cargo">Product Owner  on ERP Integrations</h2>
+
+                    <!--
+                        A descrição abaixo deve ser curta (1 a 3 frases).
+                        Fale sobre o que você estuda, o que busca e
+                        um diferencial seu.
+                    -->
+                    <p class="hero-descricao">
+                        Product Owner | ERP Solutions • Firebird • PostgreSQL • REST APIs • Linux Administration • Infrastructure • Systems Integration & Process Optimization.
+                    </p>
+
+                    <!-- Botões de contato rápido (redes profissionais) -->
+                    <div class="hero-botoes">
+                        <!-- Altere o href para o seu link real do LinkedIn -->
+                        <a
+                            href="https://www.linkedin.com/in/dev-gabrielvicente/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-personalizado btn-dourado">
+                            LinkedIn
+                        </a>
+
+                        <!-- Altere o href para o seu link real do GitHub -->
+                        <a
+                            href="https://github.com/GabrielVicente12"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-personalizado btn-contorno">
+                            GitHub
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!--
+    =========================================================
+    2. SOBRE MIM
+    =========================================================
+
+    Objetivo desta seção:
+    Explicar, em poucas linhas, quem você é profissionalmente.
+
+    Como escrever um bom resumo profissional:
+        - Comece dizendo o que você é/estuda hoje;
+        - Fale sobre seus interesses dentro da tecnologia;
+        - Cite objetivos de carreira de forma objetiva;
+        - Use frases curtas e linguagem simples.
+
+    O que EVITAR escrever:
+        - História de vida completa (infância, família, etc.);
+        - Informações pessoais sensíveis;
+        - Textos muito longos (recrutador não vai ler tudo);
+        - Erros de português (revise sempre antes de publicar).
+
+    O QUE ALTERAR AQUI:
+        - O texto dentro da tag <p>, com suas próprias palavras.
+
+    OBSERVAÇÃO SOBRE A "PAINEL-SECAO":
+    A div com class="painel-secao" é apenas uma "caixa" com borda,
+    fundo levemente diferente e cantos arredondados. Ela existe só
+    para dar mais destaque visual ao conteúdo, deixando a página
+    com aparência de painéis bem definidos (como um currículo
+    profissional). Você pode reaproveitar essa mesma classe em
+    qualquer outra seção que quiser destacar com uma borda.
+    -->
+    <section id="sobre" class="secao sobre-mim">
+        <div class="container">
+
+            <h2 class="titulo-secao">Sobre Mim</h2>
+            <hr class="linha-dourada">
+
+            <!-- Painel com borda envolvendo o texto de apresentação -->
+            <div class="painel-secao">
+                <p class="texto-sobre">
+                   Sou Product Owner especializado em integrações de ERP e soluções corporativas, atuando na interseção entre estratégia de negócios, tecnologia e eficiência operacional. Possuo experiência na definição e refinamento de requisitos, gestão e priorização de backlog, condução ágil com Scrum, alinhamento entre stakeholders e equipes multidisciplinares, além da implementação de melhorias contínuas orientadas à geração de valor e eficiência operacional. <br>
+                   Minha trajetória profissional é complementada com experiência em ambientes Linux, infraestrutura de TI, integração de sistemas e arquiteturas orientadas a serviços, o que me proporciona uma visão abrangente do ciclo de vida dos produtos e dos desafios técnicos envolvidos em sua evolução. Possuo conhecimento em APIs REST, integrações entre plataformas, análise de processos e suporte a operações críticas, atuando de forma estratégica na convergência entre negócio, tecnologia e experiência do usuário. <br>
+                   Essa combinação entre visão de produto, capacidade analítica e domínio técnico permite conduzir iniciativas complexas com maior assertividade, promovendo entregas escaláveis, sustentáveis e alinhadas aos objetivos organizacionais.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+    =========================================================
+    3. TECNOLOGIAS
+    =========================================================
+
+    Objetivo desta seção:
+    Mostrar, de forma visual e rápida, quais tecnologias você
+    já conhece (mesmo que ainda esteja aprendendo).
+
+    Como ADICIONAR uma nova tecnologia:
+        1. Copie um bloco completo <div class="col-6 col-md-3"> ... </div>
+        2. Cole abaixo do último bloco existente;
+        3. Altere apenas o texto dentro da tag <p>.
+
+    Como REMOVER uma tecnologia:
+        1. Apague o bloco <div class="col-6 col-md-3"> ... </div>
+           inteiro correspondente à tecnologia que deseja remover.
+
+    Dica: liste apenas tecnologias que você realmente
+    conhece, mesmo que em nível básico. Não é necessário
+    ser especialista, mas seja honesto no currículo.
+    -->
+    <section id="tecnologias" class="secao tecnologias">
+        <div class="container">
+
+            <h2 class="titulo-secao">Tecnologias</h2>
+            <hr class="linha-dourada">
+
+            <div class="row text-center">
+
+                <!-- Cada bloco abaixo representa UMA tecnologia -->
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>ERP Systems</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>REST APIs</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>PostgresSQL</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>Firebird</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>Scrum | Kanban</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>GNU | Linux</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>TI | Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>Git & Github</p>
+                    </div>
+                </div>
+
+
+                <!--
+                    Exemplo de como adicionar uma nova tecnologia.
+                    Basta descomentar o bloco abaixo e alterar o texto.
+
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card-tecnologia">
+                        <p>Nome da Tecnologia</p>
+                    </div>
+                </div>
+                -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+    =========================================================
+    4. PROJETOS
+    =========================================================
+
+    Objetivo desta seção:
+    Mostrar exemplos práticos do seu trabalho, mesmo que sejam
+    projetos de estudo feitos durante o curso.
+
+    Como SUBSTITUIR pelos seus próprios projetos:
+        1. Altere o título dentro de <h3>;
+        2. Altere a descrição dentro de <p>;
+        3. Altere as tecnologias usadas na lista de <span>;
+        4. Altere o link do botão "Ver Projeto" (href).
+
+    Como ADICIONAR um novo projeto:
+        1. Copie um <article class="card-projeto"> ... </article>
+           inteiro (incluindo a coluna que o envolve);
+        2. Cole após o último card de projeto existente;
+        3. Altere as informações conforme o exemplo acima.
+
+    Dica: para alunos do 1º semestre, vale colocar projetos
+    simples, como uma calculadora, uma lista de tarefas ou
+    um clone de página estática. O importante é mostrar
+    organização e capacidade de concluir um projeto.
+    -->
+    <section id="projetos" class="secao projetos">
+        <div class="container">
+
+            <h2 class="titulo-secao">Projetos</h2>
+            <hr class="linha-dourada">
+
+            <div class="row">
+
+                <!-- ============ CARD DE PROJETO 1 ============ -->
+                <div class="col-12 col-md-4 mb-4">
+                    <article class="card-projeto">
+                        <h3>Modelagem Analítica App Força de Vendas</h3>
+                        <p>
+                           Análise de negócios, modelagem de requisitos e especificação funcional de aplicativo de força de vendas integrado a sistemas por APIs REST.
+                        </p>
+                        <div class="tecnologias-usadas">
+                            <span>Levantamento Requisitos</span>
+                            <span>Modelagem</span>
+                            <span>Arquitetura de Software</span>
+                            <span>Integração REST APIs</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn-personalizado btn-dourado btn-pequeno">
+                            Ver Projeto
+                        </a>
+                    </article>
+                </div>
+
+                <!-- ============ CARD DE PROJETO 2 ============ -->
+                <div class="col-12 col-md-4 mb-4">
+                    <article class="card-projeto">
+                        <h3>CRUD Java Web</h3>
+                        <p>
+                            Desenvolvimento de CRUD web em Java para administração de cadastros, integração com banco de dados e regras de negócio.
+                        </p>
+                        <div class="tecnologias-usadas">
+                            <span>Java Core</span>
+                            <span>Servlets</span>
+                            <span>Jakarta EE</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn-personalizado btn-dourado btn-pequeno">
+                            Ver Projeto
+                        </a>
+                    </article>
+                </div>
+
+                <!-- ============ CARD DE PROJETO 3 ============ -->
+                <div class="col-12 col-md-4 mb-4">
+                    <article class="card-projeto">
+                        <h3>Estruturação de Servidores Linux</h3>
+                        <p>
+                            Planejamento, implantação e administração de infraestrutura Linux, abrangendo DNS, DHCP, Firewall, Samba, NFS, Apache, Nginx, FTP, Postfix e Dovecot.
+                        </p>
+                        <div class="tecnologias-usadas">
+                            <span>Linux</span>
+                            <span>Servers</span>
+                            <span>Network & Infrastructure</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn-personalizado btn-dourado btn-pequeno">
+                            Ver Projeto
+                        </a>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+    =========================================================
+    5. FORMAÇÃO ACADÊMICA
+    =========================================================
+
+    Objetivo desta seção:
+    Mostrar sua trajetória de estudos: cursos técnicos,
+    graduações, certificações, etc.
+
+    O QUE ALTERAR AQUI:
+        - "Nome da Instituição" -> nome da escola/faculdade/curso;
+        - "Nome do Curso"       -> curso que você está fazendo;
+        - "Período"             -> datas de início e término
+                                    (ou "Em andamento").
+
+    Dica: liste do mais recente para o mais antigo.
+    -->
+    <section id="formacao" class="secao formacao">
+        <div class="container">
+
+            <h2 class="titulo-secao">Formação Acadêmica</h2>
+            <hr class="linha-dourada">
+
+            <!-- Painel com borda agrupando todos os itens de formação -->
+            <div class="painel-secao painel-formacao">
+
+                <!-- ============ FORMAÇÃO 1 (exemplo fictício) ============ -->
+                <div class="item-formacao">
+                    <h3>Bacharel em Sistemas de Informação</h3>
+                    <p class="instituicao">Universidade de Fernandópolis - UNIFEF</p>
+                    <p class="periodo">2025 - Em andamento</p>
+                </div>
+
+                <div class="item-formacao">
+                    <h3>Product Management</h3>
+                    <p class="instituicao">Alura</p>
+                    <p class="periodo">2026</p>
+                </div>
+                
+                <div class="item-formacao">
+                    <h3>Gestão Ágil</h3>
+                    <p class="instituicao">Alura</p>
+                    <p class="periodo">2026</p>
+                </div>
+
+                <div class="item-formacao">
+                    <h3>Administração Sistemas GNU\Linux</h3>
+                    <p class="instituicao">Big Cursos</p>
+                    <p class="periodo">2025</p>
+                </div>
+
+                <div class="item-formacao">
+                    <h3>Hardware e Redes</h3>
+                    <p class="instituicao">Big Cursos</p>
+                    <p class="periodo">2025</p>
+                </div>
+
+                <div class="item-formacao">
+                    <h3>Técnico em Marketing</h3>
+                    <p class="instituicao">ETEC Prof.° Armando José Farinazzo</p>
+                    <p class="periodo">2024</p>
+                </div>
+
+                <!--
+                    Para adicionar uma nova formação, copie um bloco
+                    <div class="item-formacao"> ... </div> completo
+                    e cole abaixo, alterando as informações.
+                -->
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+    =========================================================
+    6. CONTATO
+    =========================================================
+
+    Objetivo desta seção:
+    Facilitar ao máximo que um recrutador entre em contato
+    com você. Deve ser simples, direta e visível.
+
+    Como alterar os links:
+        - E-mail   -> troque "seuemail@exemplo.com" pelo seu e-mail,
+                       tanto no texto quanto dentro de "mailto:";
+        - LinkedIn -> troque o link dentro do href;
+        - GitHub   -> troque o link dentro do href.
+    -->
+    <section id="contato" class="secao contato">
+        <div class="container text-center">
+
+            <h2 class="titulo-secao">Contato</h2>
+            <hr class="linha-dourada">
+
+            <!--
+                Painel com borda destacada, igual ao efeito de
+                "caixa" usado como referência visual neste ajuste.
+                A classe "painel-destaque" usa uma borda um pouco
+                mais visível que a "painel-secao" padrão.
+            -->
+            <div class="painel-secao painel-destaque">
+
+                <p class="texto-contato">
+                    Para oportunidades, parcerias ou esclarecimentos, utilize o e-mail abaixo:
+                </p>
+
+                <div class="links-contato">
+
+                    <!-- Link de e-mail: o "mailto:" abre o programa de e-mail padrão -->
+                    <a href="mailto:seuemail@exemplo.com" class="link-contato">
+                        dev.gvicente@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+    =========================================================
+    RODAPÉ (FOOTER)
+    =========================================================
+    Pequeno texto final, com direitos e/ou nome do site.
+    Pode alterar o nome e o ano livremente.
+    -->
+    <footer class="rodape">
+        <div class="container text-center">
+            <p>&copy; 2026 Seu Nome Completo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
